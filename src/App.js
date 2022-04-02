@@ -32,6 +32,7 @@ function App() {
   return (
     <div className="container">
       <Header
+        title='Task Tracker'
         btnState={showAddTask}
         onClick={() => setShowAddTask(!showAddTask)}
       />
