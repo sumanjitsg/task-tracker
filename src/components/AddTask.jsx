@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 function AddTask({ onAdd }) {
   const [text, setText] = useState('');
@@ -36,7 +37,7 @@ function AddTask({ onAdd }) {
           type="text"
           name="task"
           id="add-task"
-          onChange={({ target }) => { setText(target.value); console.log(target.value); }} />
+          onChange={({ target }) => setText(target.value)} />
       </div>
       <div className="form-control">
         <label
@@ -63,4 +64,9 @@ function AddTask({ onAdd }) {
     </form>
   );
 };
+
+AddTask.propTypes = {
+  onAdd: PropTypes.func.isRequired,
+};
+
 export default AddTask;
