@@ -83,6 +83,11 @@ body {
   display: block;
 }
 
+.form-control label.required::after {
+  content: ' *';
+  color: red;
+}
+
 .form-control input {
   width: 100%;
   height: 40px;

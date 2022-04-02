@@ -9,13 +9,7 @@ function AddTask({ onAdd }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!text || !day) {
-      alert('Please enter task');
-      return;
-    }
-
     onAdd({ text, day, reminder });
-
     e.target.reset();
   };
 
@@ -33,8 +27,11 @@ function AddTask({ onAdd }) {
       onReset={handleReset}
     >
       <div className="form-control">
-        <label htmlFor="add-task">Task</label>
+        <label
+          htmlFor="add-task"
+          className='required'>Task</label>
         <input
+          required
           placeholder='Add Task'
           type="text"
           name="task"
@@ -42,8 +39,11 @@ function AddTask({ onAdd }) {
           onChange={({ target }) => { setText(target.value); console.log(target.value); }} />
       </div>
       <div className="form-control">
-        <label htmlFor="add-day-time">Day & Time</label>
+        <label
+          htmlFor="add-day-time"
+          className='required'>Day & Time</label>
         <input
+          required
           placeholder='Add Day & Time' type="text"
           name="day-time"
           id="add-day-time"
